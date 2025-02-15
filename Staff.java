@@ -1,6 +1,6 @@
 package project;
 	//testtting
-
+	//123
 public abstract class Staff {
 	
 	 protected int hours;
