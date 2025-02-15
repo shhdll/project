@@ -8,32 +8,25 @@ public class Museum {
 	private int numOfPaintings;
 	private int numOfSculptures;
 
-	 public Museum() {
-	    	
+public Museum() {	
+	    }
+	
+public boolean addArt(Art a) {
 	    }
 	 
-	 public boolean addArt(Art a) {
-	    	
+ public boolean removeArt(Art a) {
 	    }
 	 
-	 public boolean removeArt(Art a) {
-	    	
+ public Art[] searchArt(String type) {
 	    }
 	 
-	 public Art[] searchArt(String type) {
-	    	
-	    }
-	 
-	 public boolean addEmployee(Employee e) {
-	    	
+public boolean addEmployee(Employee e) {
 	    }
 
-	 public boolean removeEmployee(Employee e) {
-	    	
+public boolean removeEmployee(Employee e) {
 	    }
 
-	 public Employee searchEmployee(String name) {
-	    	
+public Employee searchEmployee(String name) {
 	    }
 
 }
