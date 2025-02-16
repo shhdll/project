@@ -6,9 +6,10 @@ public abstract class Staff {
 	 protected String nname;
 
 public Staff(int hours, String name) {	
+	this.hours=hours;
+	this.name = name;
 	}
 	
-public double Salary(int h) {	
-	}
+public abstract double  Salary(int h);
 
 }

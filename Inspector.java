@@ -4,8 +4,14 @@ public class Inspector extends Staff {
 	
 	private int numOfInspections;
 	
+	public Inspector (int hours, String name, int yearOfEx,int numOfInspections) {
+      super(hours,name,yearOfEx);
+      this.numOfInspections=numOfInspections; 
+    }
     
     public double Salary(int h) {
+		return super.Salary+(numOfInspections*200);
+		
     	
 	}
 }
