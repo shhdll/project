@@ -7,6 +7,7 @@ public class Art {
 	protected String artist;
 
 public Art(int id, int date, String artist) {	
+	this.id=id;
     }
     
  public String toString() {
