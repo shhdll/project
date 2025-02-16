@@ -17,22 +17,22 @@ public Museum(String name,int numOfArts,int numOfStaff,int numOfPaintings,int nu
 	this.numOfSculptures=numOfSculptures;	
 	    }
 	
-public boolean addArt(Art a) {
+public boolean addArt(Art a) { //aggregation
 	    }
 	 
- public boolean removeArt(Art a) {
+ public boolean removeArt(Art a) { //aggregation
 	    }
 	 
- public Art[] searchArt(String type) {
+ public Art[] searchArt(String type) { //aggregation
 	    }
 	 
-public boolean addEmployee(Employee e) {
+public boolean addEmployee(Employee e) { //composition
 	    }
 
-public boolean removeEmployee(Employee e) {
+public boolean removeEmployee(Employee e) { //composition
 	    }
 
-public Employee searchEmployee(String name) {
+public Employee searchEmployee(String name) { //composition 
 	    }
 
 }
