@@ -1,8 +1,7 @@
 package project;
 
 public class Museum {
-	//testtting
-	//123
+	
 	private String name;
 	private int numOfArts;
 	private int numOfStaff;
