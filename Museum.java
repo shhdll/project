@@ -8,13 +8,17 @@ public class Museum {
 	private int numOfStaff;
 	private int numOfPaintings;
 	private int numOfSculptures;
+	private Art ArtList[];
+	private Staff StaffList[];
 
-public Museum(String name,int numOfArts,int numOfStaff,int numOfPaintings,int numOfSculptures) {
+public Museum(String name,int sizeOfArt, int sizeOfStaff) {
 	this.name=name;
-	this.numOfArts=numOfArts;
-	this.numOfStaff=numOfStaff;
-	this.numOfPaintings=numOfPaintings;
-	this.numOfSculptures=numOfSculptures;	
+	numOfArts=0;
+	numOfStaff=0;
+	ArtList= new Art[sizeOfArt];
+	StaffList = new Staff[sizeOfStaff];
+	numOfPaintings=0;
+	numOfSculptures=0;	
 	    }
 	
 public boolean addArt(Art a) { //aggregation
