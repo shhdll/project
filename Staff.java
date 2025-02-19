@@ -3,7 +3,7 @@ package project;
 public abstract class Staff {
 	
 	 protected int hours;
-	 protected String nname;
+	 protected String name;
 
 public Staff(int hours, String name) {	
 	this.hours=hours;
@@ -12,4 +12,8 @@ public Staff(int hours, String name) {
 	
 public abstract double  Salary(int h);
 
+public int getHours(){return hours;}
+public void setHours(int hours){this.hours=hours;}
+public String getName(){return name;}
+public void setName(String name){this.name=name;}
 }
