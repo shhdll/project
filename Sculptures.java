@@ -12,5 +12,8 @@ public class Sculptures {
  public String toString() {
     	return super.toString+" Type of sculpture: "+typeOfSculp;
     }
+public String getTypeOfSculp() {return typeOfSculp;}
 
+    
+    public void setTypeOfSculp(String typeOfSculp){this.typeOfSculp = typeOfSculp;}
 }
