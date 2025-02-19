@@ -21,7 +21,7 @@ public Museum(String name,int sizeOfArt, int sizeOfStaff) {
 	    }
 	
 public boolean addArt(Art a) { //aggregation
-	if(numOfArts >ArtList.length)
+	if(numOfArts >= ArtList.length)
 		return false;
 	ArtList[numOfArts++]=a;
 	if(a instanceOf(Paintings))
@@ -47,7 +47,11 @@ public boolean addArt(Art a) { //aggregation
 	    }
 	 return false;
  }
- public Art[] searchArt(String type) { //aggregation
+ public Art searchArt(int id) { //aggreigation
+	  for(int i=0 ; i<ArtList.length ; i++)
+			 if(ArtList[i].grtId()==id)
+				 return ArtList[i];
+	 return null;
 	    }
 	 
 public boolean addEmployee(Employee e) { //composition
