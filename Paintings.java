@@ -13,5 +13,8 @@ public class Paintings extends Art {
 public String toString() {
 	return super.toString+" Type of painting: "+typeOfPainting;
 	    }
+	public String getTypeOfPainting() {return typeOfPainting;}
 
+    
+    public void setTypeOfPainting(String typeOfPainting){this.typeOfPainting = typeOfPainting;}
 }
