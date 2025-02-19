@@ -35,9 +35,18 @@ public boolean addArt(Art a) { //aggregation
  public boolean removeArt(Art a) { //aggregation
 	 if(numOfArt>0){
 		 for(int i=0 ; i<ArtList.length ; i++)
-			 if(ArtList[i]=a
+			 if(ArtList[i].grtId()==a.getId()){
+				 ArtList[i]=ArtList[numOfArts-1];
+					 ArtList[--numOfArt]=null;
+			 }
+		 if(a instanceof(Paintings))
+			 numOfPaintings--;
+		 if(a instanceOf(Sculptures))
+		numOfSculpturess--;
+		 return true;
 	    }
-	 
+	 return false;
+ }
  public Art[] searchArt(String type) { //aggregation
 	    }
 	 
