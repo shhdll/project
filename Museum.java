@@ -49,18 +49,31 @@ public boolean addArt(Art a) { //aggregation
  }
  public Art searchArt(int id) { //aggreigation
 	  for(int i=0 ; i<ArtList.length ; i++)
-			 if(ArtList[i].grtId()==id)
+			 if(ArtList[i].getId()==id)
 				 return ArtList[i];
 	 return null;
 	    }
 	 
-public boolean addEmployee(Employee e) { //composition
+public boolean addStaff(Staff e) { //composition
+	if(numOfStaff >= StaffList.length)
+		return false;
+	StaffList[numOfStaff++]= new Staff(e.getHours() , e.getName());
+
+	return true;
 	    }
 
-public boolean removeEmployee(Employee e) { //composition
+public boolean removeStaff(Staff e) { //composition
+	if(numOfStaff >0)
+		for(int i=0 ; i<StaffList.length : i++){
+			if(StaffList[i].getName() == e.getName()){
+				StaffList[i]=StaffList[numOfStaff-1];
+			StaffList[--numOfStaff]= null; 
+		}
+		}
+			
 	    }
 
-public Employee searchEmployee(String name) { //composition 
+public Employee searchStaff(String name) { //composition 
 	    }
 
 }
