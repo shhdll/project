@@ -12,5 +12,7 @@ public class Artist extends Staff {
  public double Salary(int h) {
    return (hours*500)+(100*yearOfEx);
     }
+public void setYearOfEx(int yearOfEx){this.yearOfEx=yearOfEx;}
+public int getYearOfEx(){return yearOfEx;}
 	
 }
