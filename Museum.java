@@ -83,4 +83,8 @@ public Staff searchStaff(String name) { //composition
 		if(StaffList[i].getName() == name)
 			return StaffList[i];
 	}
+
+	public String getName(){return name;}
+	public void setName(String name){this.name=name;}
+
 }
