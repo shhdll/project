@@ -21,9 +21,21 @@ public Museum(String name,int sizeOfArt, int sizeOfStaff) {
 	    }
 	
 public boolean addArt(Art a) { //aggregation
+	if(numOfArts >ArtList.length)
+		return false;
+	ArtList[numOfArts++]=a;
+	if(a instanceOf(Paintings))
+		numOfPaintings++;
+
+	if(a instanceOf(Sculptures))
+		numOfSculpturess++;
+	return true;
 	    }
 	 
  public boolean removeArt(Art a) { //aggregation
+	 if(numOfArt>0){
+		 for(int i=0 ; i<ArtList.length ; i++)
+			 if(ArtList[i]=a
 	    }
 	 
  public Art[] searchArt(String type) { //aggregation
