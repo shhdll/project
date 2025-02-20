@@ -1,19 +1,20 @@
 package project;
 
-public class Sculptures {
+public class Sculptures extends Art {
 
-	private String typeOfSculp;
+    private String typeOfSculp;
 
-    public Sculptures(int id,String date,String artist, String typeOfSculp ){
-		super(id , date , artist);
-		this.typeOfSculp = typeOfSculp;
-		
-
- public String toString() {
-    	return super.toString+" Type of sculpture: "+typeOfSculp;
+    public Sculptures(int id, String date, String artist, String typeOfSculp, String name) {
+        super(id, date, artist, name);
+        this.typeOfSculp = typeOfSculp;
     }
-public String getTypeOfSculp() {return typeOfSculp;}
 
-    
-    public void setTypeOfSculp(String typeOfSculp){this.typeOfSculp = typeOfSculp;}
+    public String toString() {
+        return super.toString() + " Type of sculpture: " + typeOfSculp; 
+    }
+
+    // getters, setters
+    public String getTypeOfSculp() { return typeOfSculp; }
+
+    public void setTypeOfSculp(String typeOfSculp) { this.typeOfSculp = typeOfSculp; }
 }
