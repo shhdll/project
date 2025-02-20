@@ -15,5 +15,6 @@ public class Artist extends Staff {
 
     // getters, setters
     public void setYearOfEx(int yearOfEx) { this.yearOfEx = yearOfEx; }
+    
     public int getYearOfEx() { return yearOfEx; }
 }
