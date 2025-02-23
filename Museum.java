@@ -63,10 +63,15 @@ public class Museum {
     }
 
     public boolean addStaff(Staff e) { //composition
-        if (numOfStaff >= StaffList.length)
+       if (numOfStaff >= StaffList.length)
             return false;
-        StaffList[numOfStaff++] = new Staff(e.getHours(), e.getName());
-
+        
+        if (e instanceof Manager) 
+            StaffList[numOfStaff++] = new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()); 
+        
+        else if (e instanceof Artist) 
+            StaffList[numOfStaff++] = new Artist(e.getHours(), e.getName(), ((Artist) e).getYearOfEx()); 
+        
         return true;
     }
 
