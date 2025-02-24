@@ -1,4 +1,4 @@
-package project;
+//package project;
 
 public class Artist extends Staff {
     

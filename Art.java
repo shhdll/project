@@ -1,13 +1,13 @@
-package project;
+//package project;
 
 public class Art {
 
     protected int id;
-    protected int date;
+    protected String date;
     protected String artist;
     protected String name;
 
-    public Art(int id, int date, String artist, String name) {
+    public Art(int id, String date, String artist, String name) {
         this.id = id;
         this.date = date;
         this.artist = artist;
@@ -21,13 +21,13 @@ public class Art {
     // Getters and Setters
     public void setId(int id) { this.id = id; }
 
-    public void setDate(int date) { this.date = date; }
+    public void setDate(String date) { this.date = date; }
 
     public void setArtist(String artist) { this.artist = artist; }
 
     public int getId() { return id; }
 
-    public int getDate() { return date; }
+    public String getDate() { return date; }
 
     public String getArtist() { return artist; }
 }
