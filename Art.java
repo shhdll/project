@@ -13,7 +13,7 @@ public class Art {
         this.artist = artist;
         this.name = name;
     }
-
+    @Override
     public String toString() {
         return "ID: " + id + " Date: " + date + " Artist: " + artist+ " name: "+name;
     }

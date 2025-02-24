@@ -8,11 +8,14 @@ public class Inspector extends Artist {
      		super(hours,name,yearOfEx);
      	        this.numOfInspections=numOfInspections; 
   	  }
-    
+    @Override
  	public double Salary(int h) {
 		return super.Salary(hours)+(numOfInspections*200);
 	}
- 	
+	@Override
+ 	public String toString(){
+		return super.toString()+" numOfInspections: "+numOfInspections;
+	}
  	//getters, setters
 	public void setNumOfInspections(int numOfInspections){this.numOfInspections=numOfInspections;}
 	

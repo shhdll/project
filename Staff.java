@@ -9,6 +9,10 @@ public abstract class Staff {
         this.hours = hours;
         this.name = name;
     }
+    @Override
+    public String toString(){
+        return " hours: "+hours+" name: "+name;
+    }
 
     public abstract double Salary(int h);
 

@@ -8,11 +8,14 @@ public class Artist extends Staff {
         super(hours, name);
         this.yearOfEx = yearOfEx;
     }
-
+    @Override
     public double Salary(int h) {
         return (hours * 500) + (100 * yearOfEx);
     }
-
+    @Override
+    public String toString(){
+        return super.toString()+" yearOfEx: "+yearOfEx;
+    }
     // getters, setters
     public void setYearOfEx(int yearOfEx) { this.yearOfEx = yearOfEx; }
     

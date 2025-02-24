@@ -93,7 +93,17 @@ public class Museum {
         }
         return null;
     }
-
+    @Override
+    public String toString(){
+        String s="The name of our museum is :"+name+"\n";
+        s+="We have "+numOfArts+" Art pieces, "+numOfPaintings+" are paintings\n and "+numOfSculptures+" sculptures.";
+        for(int i =0;i<numOfArts;i++)
+            s+=ArtList[i].getClass().getName()+ArtList[i].toString();
+        s+="and we have "+numOfStaff+" Employees ";
+        for(int i=0;i<numOfStaff;i++)
+            s+=StaffList.getClass().getName()+StaffList[i].toString();
+        return s;
+    }
     public String getName() {
         return name;
     }

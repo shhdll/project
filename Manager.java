@@ -7,11 +7,14 @@ public class Manager extends Staff {
 		super(hours,name);
 		this.officeNum=officeNum; 
 	}
-   
+	@Override
 	public double Salary(int h) {
     		return 1000*hours;
 	}
-	
+	@Override
+	public String toString(){
+		return super.toString()+" officeNum: "+officeNum;
+	}
  	//getters, setters
 	public void setOfficeNum(int officeNum){this.officeNum=officeNum;}
 	
