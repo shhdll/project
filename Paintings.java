@@ -8,7 +8,7 @@ public class Paintings extends Art {
         super(id, date, artist, name);
         this.typeOfPainting = typeOfPainting;
     }
-
+    @Override
     public String toString() {
         return super.toString() + " Type of painting: " + typeOfPainting;
     }

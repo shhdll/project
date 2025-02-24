@@ -8,7 +8,7 @@ public class Sculptures extends Art {
         super(id, date, artist, name);
         this.typeOfSculp = typeOfSculp;
     }
-
+    @Override
     public String toString() {
         return super.toString() + " Type of sculpture: " + typeOfSculp; 
     }
