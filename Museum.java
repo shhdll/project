@@ -1,4 +1,4 @@
-package project;
+//package project;
 
 public class Museum {
     
@@ -81,10 +81,13 @@ public class Museum {
                 if (StaffList[i].getName().equals(e.getName())) {
                     StaffList[i] = StaffList[numOfStaff - 1];
                     StaffList[--numOfStaff] = null;
+                    return true;
                 }
             }
         return false;
     }
+    
+    
 
     public Staff searchStaff(String name) { //composition 
         for (int i = 0; i < StaffList.length; i++) {

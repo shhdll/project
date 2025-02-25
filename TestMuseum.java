@@ -1,4 +1,4 @@
-package project;
+//package project;
 import java.util.Scanner;
 
 public class TestMuseum {
@@ -149,6 +149,9 @@ public class TestMuseum {
                          else 
                             System.out.println("looks like the museum is full :(");
                         break;
+                        default:
+                            System.out.println("Invalid");
+                            break;
                     }
 
                 	
