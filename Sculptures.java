@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public class Sculptures extends Art {
 
@@ -10,7 +10,7 @@ public class Sculptures extends Art {
     }
     @Override
     public String toString() {
-        return super.toString() + " Type of sculpture: " + typeOfSculp; 
+        return super.toString() + ", Type of sculpture: " + typeOfSculp; 
     }
 
     // getters, setters
