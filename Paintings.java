@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public class Paintings extends Art {
     
@@ -10,7 +10,7 @@ public class Paintings extends Art {
     }
     @Override
     public String toString() {
-        return super.toString() + " Type of painting: " + typeOfPainting;
+        return super.toString() + ", Type of painting: " + typeOfPainting;
     }
 
     // getters, setters
