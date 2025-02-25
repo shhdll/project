@@ -31,9 +31,8 @@ public class TestMuseum {
             System.out.println("3- Remove art");
             System.out.println("4- Remove staff");
             System.out.println("5- Search art");
-            System.out.println("6- Search staff");
-            System.out.println("7- display all information");
-            System.out.println("8- Exit");
+            System.out.println("6- display all information");
+            System.out.println("7- Exit");
             
             choice = input.nextInt();
             
@@ -153,10 +152,10 @@ public class TestMuseum {
                 	
                     break;
                 case 3:   //remove art
-                	 System.out.println("Enter the ID of the art piece to remove:");
-                	    int removeId = input.nextInt();
+                	 System.out.println("Enter the Name of the art piece to remove:");
+                	    String removeName = input.nextLine();
 
-                	    Art artToRemove = m1.searchArt(removeId);
+                	    Art artToRemove = m1.searchArt(removeName);
                 	    
                 	    if (artToRemove != null) {
                 	        if (m1.removeArt(artToRemove)) 
@@ -183,14 +182,22 @@ public class TestMuseum {
                 	        System.out.println("Staff not found.");
                     break;
                 case 5:
-                	
+                        System.out.println("Enter the name of Atr piece you want to search for: ");
+                        String SearchArt = input.nextLine();
+                        Art artTOSearch = m1.searchArt(SearchArt);
+                	    
+                	    if (artTOSearch != null) {
+                	            System.out.println("Art Have Been found successfully :)");
+                                System.out.println(artTOSearch);
+                        }
+                	         else 
+                	            System.out.println("the museum Do Not Have this piece :(");
                     break;
+               
                 case 6:
-                	
-                    break;
-                case 7:
+                    System.out.println(m1.toString());
                         break;
-                case 8:
+                case 7:
                 	
                     b = false;
                     System.out.print("Thank you for using our system!");

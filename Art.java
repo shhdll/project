@@ -30,4 +30,8 @@ public class Art {
     public String getDate() { return date; }
 
     public String getArtist() { return artist; }
+
+    public String getName(){return name;}
+
+    public void setName(String name){ this.name = name;}
 }

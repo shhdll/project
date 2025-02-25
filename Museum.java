@@ -54,9 +54,9 @@ public class Museum {
         return false;
     }
 
-    public Art searchArt(int id) { //aggregation
-        for (int i = 0; i < ArtList.length; i++) {
-            if (ArtList[i].getId() == id)
+    public Art searchArt(String name) { //aggregation
+        for (int i = 0; i < numOfArts ; i++) {
+            if (ArtList[i].getName().equals(name))
                 return ArtList[i];
         }
         return null;
