@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public class Manager extends Staff {
 	
@@ -13,7 +13,7 @@ public class Manager extends Staff {
 	}
 	@Override
 	public String toString(){
-		return super.toString()+" officeNum: "+officeNum;
+		return "Manager) "+super.toString()+", officeNum: "+officeNum+" ,Salary: "+Salary(getHours());
 	}
  	//getters, setters
 	public void setOfficeNum(int officeNum){this.officeNum=officeNum;}
@@ -21,4 +21,3 @@ public class Manager extends Staff {
 	public int getOfficeNum(){return officeNum;}
 	
 }
-
