@@ -36,7 +36,7 @@ public class Museum {
 
     public boolean removeArt(Art a) { //aggregation
         if (numOfArts > 0) {
-            for (int i = 0; i < ArtList.length; i++) {
+            for (int i = 0; i < numOfArts; i++) {
                 if (ArtList[i].getId() == a.getId()) {
                     ArtList[i] = ArtList[numOfArts - 1];
                     ArtList[--numOfArts] = null;
