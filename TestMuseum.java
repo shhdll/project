@@ -1,4 +1,4 @@
-//package project;
+package project;
 import java.util.Scanner;
 
 public class TestMuseum {
@@ -38,6 +38,7 @@ public class TestMuseum {
             
             switch(choice) {
              case 1:  //add art
+            	  input.nextLine();
                     System.out.println("Enter P for painting, S for sculpture");
                     char artChoice = input.next().charAt(0);
                     input.nextLine(); // clean garbage
@@ -91,7 +92,8 @@ public class TestMuseum {
                     
                 		                	
                     break;
-                case 2: 
+                case 2:  //add staff
+                	  input.nextLine();
                     System.out.println("Enter M for Manager, A for Artist , I for Inspector");
                     char staffChoice = input.next().charAt(0);
                     input.nextLine(); // clean garbage
@@ -152,6 +154,7 @@ public class TestMuseum {
                 	
                     break;
                 case 3:   //remove art
+                	 input.nextLine();
                 	 System.out.println("Enter the Name of the art piece to remove:");
                 	    String removeName = input.nextLine();
 
@@ -168,6 +171,7 @@ public class TestMuseum {
                 	        System.out.println("not found");
                     break;
                 case 4:   //remove staff
+                	  input.nextLine();
                 	 System.out.println("Enter staff name to remove: ");
                 	    
                 	    String staffName = input.nextLine();
@@ -182,6 +186,7 @@ public class TestMuseum {
                 	        System.out.println("Staff not found.");
                     break;
                 case 5:
+                	  input.nextLine();
                         System.out.println("Enter the name of Atr piece you want to search for: ");
                         String SearchArt = input.nextLine();
                         Art artTOSearch = m1.searchArt(SearchArt);
