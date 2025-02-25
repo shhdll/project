@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public class Art {
 
@@ -15,7 +15,7 @@ public class Art {
     }
     @Override
     public String toString() {
-        return "ID: " + id + " Date: " + date + " Artist: " + artist+ " name: "+name;
+        return "ID: " + id + ", Date: " + date + ", Artist: " + artist+ ", name: "+name;
     }
 
     // Getters and Setters
