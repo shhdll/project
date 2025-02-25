@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class TestMuseum {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Museum m1 = new Museum("museum", 100, 50);
-        System.out.println("Welcome to our museum! \nAnd discover the wonders within");
+        Museum m1 = new Museum("Harmony museum", 100, 50);
+        System.out.println("───────── ✦ Welcome Harmony museum ✦ ─────────  \n"
+        		+ "         discover the wonders within!\n\n");
         
         Staff s1 = new Manager(40, "shams", 455);
         Staff s2 = new Artist(20, "jawaher", 16);
@@ -25,7 +26,7 @@ public class TestMuseum {
         boolean b = true;
         
         do {
-            System.out.println("------ Menu ------");
+            System.out.println("────────────────── ✦ Menu ✦ ─────────────────");
             System.out.println("1- Add art");
             System.out.println("2- Add staff");
             System.out.println("3- Remove art");
