@@ -37,19 +37,90 @@ public class TestMuseum {
             choice = input.nextInt();
             
             switch(choice) {
-                case 1:
+             case 1:  //add art
+                    System.out.println("Enter P for painting, S for sculpture");
+                    char artChoice = input.next().charAt(0);
+                    input.nextLine(); // clean garbage
+                    
+                    if (artChoice == 'P' || artChoice == 'p') {   //adding painting
+                    	
+                        System.out.println("Enter ID: ");
+                        	int id = input.nextInt();
+                        input.nextLine(); // clean garbagr
+                        System.out.println("Enter date: ");
+                        	String date = input.nextLine();
+                        System.out.println("Enter artist name: ");
+                        	String artist = input.nextLine();
+                        System.out.println("Enter the type of painting: ");
+                        	String type = input.nextLine();
+                        System.out.println("Enter painting name: ");
+                        	String name = input.nextLine();
+
+                        Art p = new Paintings(id, date, artist, type, name);
+                        
+                        if (m1.addArt(p)) 
+                            System.out.println("Painting added successfully :)");
+                         else 
+                            System.out.println("looks like the museum is full :(");
+                        
+                    } 
+                    else if (artChoice == 'S' || artChoice == 's') {   //adding sculpture
+                    	
+                        System.out.println("Enter ID: ");
+                        	int id = input.nextInt();
+                        input.nextLine(); // clean garbage
+                        System.out.println("Enter date: ");
+                        	String date = input.nextLine();
+                        System.out.println("Enter artist name: ");
+                        	String artist = input.nextLine();
+                        System.out.println("Enter the material: ");
+                        	String material = input.nextLine();
+                        System.out.println("Enter sculpture name: ");
+                        	String name = input.nextLine();
+
+                        Art sculpture = new Sculptures(id, date, artist, material, name);
+                        
+                        if (m1.addArt(sculpture)) 
+                            System.out.println("Sculpture added successfully :)");
+                         else 
+                            System.out.println("looks like the museum is full :(");
+                        
+                    }
+                    else 
+                        System.out.println("Invalid");
+                    
+                		                	
                     break;
                 case 2:
+                	
                     break;
-                case 3:
+                case 3:   //remove art
+                	 System.out.println("Enter the ID of the art piece to remove:");
+                	    int removeId = input.nextInt();
+
+                	    Art artToRemove = m1.searchArt(removeId);
+                	    
+                	    if (artToRemove != null) {
+                	        if (m1.removeArt(artToRemove)) 
+                	            System.out.println("Art removed successfully :)");
+                	         else 
+                	            System.out.println("the museum is empty :(");
+                	        
+                	    } 
+                	    else 
+                	        System.out.println("not found");
                     break;
                 case 4:
+                	
                     break;
                 case 5:
+                	
                     break;
                 case 6:
+                	
                     break;
                 case 7:
+                	
                     b = false;
                     System.out.print("Thank you for using our system!");
                     break;
