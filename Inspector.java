@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public class Inspector extends Artist {
 	
@@ -14,7 +14,7 @@ public class Inspector extends Artist {
 	}
 	@Override
  	public String toString(){
-		return "inspector) "+super.toString()+" numOfInspections: "+numOfInspections+", Salary: "+Salary(getHours());
+		return "inspector) "+"Name: " + getName() +", Hours: " + getHours()+ ", yearOfEx: " + yearOfEx +", Inspections: " + numOfInspections +", Salary: " + Salary(getHours());
 	}
  	//getters, setters
 	public void setNumOfInspections(int numOfInspections){this.numOfInspections=numOfInspections;}
