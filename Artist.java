@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public class Artist extends Staff {
     
@@ -14,7 +14,7 @@ public class Artist extends Staff {
     }
     @Override
     public String toString(){
-        return super.toString()+" yearOfEx: "+yearOfEx;
+        return "Artist) "+super.toString()+", yearOfEx: "+yearOfEx+", Salary: "+Salary(getHours());
     }
     // getters, setters
     public void setYearOfEx(int yearOfEx) { this.yearOfEx = yearOfEx; }
