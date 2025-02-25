@@ -1,4 +1,4 @@
-//package project;
+package project2;
 
 public class Museum {
     
@@ -68,6 +68,9 @@ public class Museum {
         
         if (e instanceof Manager) 
             StaffList[numOfStaff++] = new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()); 
+        
+        else if (e instanceof Inspector) 
+            StaffList[numOfStaff++] = new Inspector(e.getHours(),e.getName(),((Inspector)e).getYearOfEx(),((Inspector)e).getNumOfInspections());
         
         else if (e instanceof Artist) 
             StaffList[numOfStaff++] = new Artist(e.getHours(), e.getName(), ((Artist) e).getYearOfEx()); 
