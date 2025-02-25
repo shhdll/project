@@ -168,8 +168,19 @@ public class TestMuseum {
                 	    else 
                 	        System.out.println("not found");
                     break;
-                case 4:
-                	
+                case 4:   //remove staff
+                	 System.out.println("Enter staff name to remove: ");
+                	    
+                	    String staffName = input.nextLine();
+                	    Staff s = m1.searchStaff(staffName);
+                	    
+                	    if (s != null) { 
+                	        if (m1.removeStaff(s))
+                	            System.out.println("Staff removed");
+                	        else
+                	            System.out.println("Failed to remove.");
+                	    } else 
+                	        System.out.println("Staff not found.");
                     break;
                 case 5:
                 	
