@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public class Museum {
     
@@ -40,8 +40,6 @@ public class Museum {
                 if (ArtList[i].getId() == a.getId()) {
                     ArtList[i] = ArtList[numOfArts - 1];
                     ArtList[--numOfArts] = null;
-                }
-            }
 
             if (a instanceof Paintings) //check if art is a painting
                 numOfPaintings--;
@@ -50,6 +48,8 @@ public class Museum {
                 numOfSculptures--;
 
             return true;
+                }
+            }
         }
         return false;
     }
@@ -94,14 +94,18 @@ public class Museum {
         return null;
     }
     @Override
-    public String toString(){
-        String s="The name of our museum is :"+name+"\n";
-        s+="We have "+numOfArts+" Art pieces, "+numOfPaintings+" are paintings\n and "+numOfSculptures+" sculptures.";
-        for(int i =0;i<numOfArts;i++)
-            s+=ArtList[i].getClass().getName()+ArtList[i].toString();
-        s+="and we have "+numOfStaff+" Employees ";
-        for(int i=0;i<numOfStaff;i++)
-            s+=StaffList.getClass().getName()+StaffList[i].toString();
+    public String toString() {
+        String s = "The name of our museum is: "+name+"\n";
+        s += "We have " +numOfArts+ " art pieces are "+ numOfPaintings + " paintings and " + numOfSculptures + " sculptures\n\n";
+       
+        s += "Art Pieces:\n";
+        for(int i = 0; i < numOfArts; i++) 
+            s += "  ✦ " + ArtList[i].toString() + "\n";
+        
+        s += "\nand we have " + numOfStaff + " employees:\n";
+        for(int i = 0; i < numOfStaff; i++) 
+            s += "  ✦ " + StaffList[i].toString() + "\n";
+        
         return s;
     }
     public String getName() {
