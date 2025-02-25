@@ -1,4 +1,4 @@
-//package project;
+package project;
 
 public abstract class Staff {
 
@@ -11,7 +11,7 @@ public abstract class Staff {
     }
     @Override
     public String toString(){
-        return " hours: "+hours+", name: "+name;
+        return "Name: " + getName() +", Hours: " + getHours();
     }
 
     public abstract double Salary(int h);
