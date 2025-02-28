@@ -101,10 +101,9 @@ public class TestMuseum {
                     switch(staffChoice){
                         case 'M': case 'm':
                         System.out.print("Enter Hours: ");
-                        int hours = input.nextInt();
+                        int hours = input.nextInt();input.nextLine();
                         System.out.print("Enter Name: ");
                         String name = input.nextLine();
-                        input.nextLine();
                         System.out.print("Enter Office Number: ");
                         int ofnum = input.nextInt();
                         
@@ -118,10 +117,10 @@ public class TestMuseum {
                         case 'A': case 'a':
 
                         System.out.print("Enter Hours: ");
-                        int hours2 = input.nextInt();
+                        int hours2 = input.nextInt();input.nextLine();
                         System.out.print("Enter Name: ");
                         String name2 = input.nextLine();
-                        input.nextLine();
+                        
                         System.out.print("Enter yaers of experience : ");
                         int yearOfEx = input.nextInt();
 
@@ -134,10 +133,10 @@ public class TestMuseum {
 
                         case 'I':case'i':
                         System.out.print("Enter Hours: ");
-                        int hours3 = input.nextInt();
+                        int hours3 = input.nextInt();input.nextLine();
                         System.out.print("Enter Name: ");
                         String name3 = input.nextLine();
-                        input.nextLine();
+                        
                         System.out.print("Enter yaers of experience : ");
                         int yearOfEx1 = input.nextInt();
                         System.out.print("Enter number Of Inspections : ");
