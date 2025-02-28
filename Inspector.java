@@ -1,5 +1,3 @@
-package project;
-
 public class Inspector extends Artist {
 	
 	private int numOfInspections;
