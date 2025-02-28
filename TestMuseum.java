@@ -1,4 +1,3 @@
-//package project;
 import java.util.Scanner;
 
 public class TestMuseum {
@@ -37,6 +36,11 @@ public class TestMuseum {
             
             choice = input.nextInt();
             
+            if (choice < 1 || choice > 7) {
+                System.out.println("Invalid choice. Please enter a number between 1 and 7.");
+                continue;
+                }
+            
             switch(choice) {
              case 1:  //add art
             	  input.nextLine();
@@ -48,7 +52,7 @@ public class TestMuseum {
                     	
                         System.out.println("Enter ID: ");
                         	int id = input.nextInt();
-                        input.nextLine(); // clean garbagr
+                        input.nextLine(); // clean garbage
                         System.out.println("Enter date: ");
                         	String date = input.nextLine();
                         System.out.println("Enter artist name: ");
@@ -145,13 +149,10 @@ public class TestMuseum {
                         Inspector objI = new Inspector(hours3,name3,yearOfEx1,Inspections);
 
                         if (m1.addStaff(objI)) 
-                            System.out.println("Manager added successfully :)");
+                            System.out.println("Inspector added successfully :)");
                          else 
                             System.out.println("looks like the museum is full :(");
                         break;
-                        default:
-                            System.out.println("Invalid");
-                            break;
                     }
 
                 	
