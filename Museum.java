@@ -1,5 +1,3 @@
-package project2;
-
 public class Museum {
     
     private String name;
@@ -80,7 +78,7 @@ public class Museum {
 
     public boolean removeStaff(Staff e) { //composition
         if (numOfStaff > 0)
-            for (int i = 0; i < StaffList.length; i++) {
+            for (int i = 0; i < numOfStaff; i++) {
                 if (StaffList[i].getName().equals(e.getName())) {
                     StaffList[i] = StaffList[numOfStaff - 1];
                     StaffList[--numOfStaff] = null;
@@ -93,7 +91,7 @@ public class Museum {
     
 
     public Staff searchStaff(String name) { //composition 
-        for (int i = 0; i < StaffList.length; i++) {
+        for (int i = 0; i < numOfStaff; i++) {
             if (StaffList[i].getName().equals(name))
                 return StaffList[i];
         }
