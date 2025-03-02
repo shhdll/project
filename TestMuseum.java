@@ -191,7 +191,7 @@ public class TestMuseum {
                     break;
                 case 5:
                 	  input.nextLine();
-                        System.out.println("Enter the name of Atr piece you want to search for: ");
+                        System.out.println("Enter the name of Art piece you want to search for: ");
                         String SearchArt = input.nextLine();
                         Art artTOSearch = m1.searchArt(SearchArt);
                 	    
