@@ -125,7 +125,7 @@ public class TestMuseum {
                         System.out.print("Enter Name: ");
                         String name2 = input.nextLine();
                         
-                        System.out.print("Enter yaers of experience : ");
+                        System.out.print("Enter years of experience : ");
                         int yearOfEx = input.nextInt();
 
                         Artist a = new Artist(hours2, name2, yearOfEx);
@@ -141,7 +141,7 @@ public class TestMuseum {
                         System.out.print("Enter Name: ");
                         String name3 = input.nextLine();
                         
-                        System.out.print("Enter yaers of experience : ");
+                        System.out.print("Enter years of experience : ");
                         int yearOfEx1 = input.nextInt();
                         System.out.print("Enter number Of Inspections : ");
                         int Inspections = input.nextInt();
