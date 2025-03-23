@@ -7,9 +7,10 @@ public class Art {
     protected String artist;
     protected String name;
 
-    public Art(int id, String date, String artist, String name) {
-        //if(id<0) throw new //user defined
-        
+    public Art(int id, String date, String artist, String name)throws InvalidArtIdException {
+        if(id<0){
+            throw new InvalidArtIdException();
+        } 
         this.id = id;
         this.date = date;
         this.artist = artist;

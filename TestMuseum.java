@@ -10,12 +10,16 @@ public class TestMuseum {
         Staff s1 = new Manager(40, "shams", 455);
         Staff s2 = new Artist(20, "jawaher", 16);
         Inspector s3 = new Inspector(25, "shahad", 5, 15);
+        try {
+            Art a1 = new Paintings(120, "1519", "Leonardo da Vinci", "oil painting", "Mona Lisa");
+            Sculptures a2 = new Sculptures(113, "1345 BC", "ancient Egyptian", "clay", "Nefertiti");
+            m1.addArt(a1);
+            m1.addArt(a2);
+        } catch (InvalidArtIdException e) {
+            System.out.println(e.toString());
+        }
         
-        Art a1 = new Paintings(120, "1519", "Leonardo da Vinci", "oil painting", "Mona Lisa");
-        Sculptures a2 = new Sculptures(113, "1345 BC", "ancient Egyptian", "clay", "Nefertiti");
-        
-        m1.addArt(a1);
-        m1.addArt(a2);
+       
         
         m1.addStaff(s1);
         m1.addStaff(s2);
@@ -62,12 +66,15 @@ public class TestMuseum {
                         System.out.println("Enter painting name: ");
                         	String name = input.nextLine();
 
-                        Art p = new Paintings(id, date, artist, type, name);
-                        
-                        if (m1.addArt(p)) 
-                            System.out.println("Painting added successfully :)");
-                         else 
-                            System.out.println("looks like the museum is full :(");
+                        try {
+                            Art p = new Paintings(id, date, artist, type, name);
+                            if (m1.addArt(p)) 
+                                System.out.println("Painting added successfully :)");
+                            else 
+                                System.out.println("looks like the museum is full :(");
+                        } catch (InvalidArtIdException e) {
+                            System.out.println(e.toString());
+                        }
                         
                     } 
                     else if (artChoice == 'S' || artChoice == 's') {   //adding sculpture
@@ -83,13 +90,15 @@ public class TestMuseum {
                         	String material = input.nextLine();
                         System.out.println("Enter sculpture name: ");
                         	String name = input.nextLine();
-
-                        Art sculpture = new Sculptures(id, date, artist, material, name);
-                        
-                        if (m1.addArt(sculpture)) 
-                            System.out.println("Sculpture added successfully :)");
-                         else 
-                            System.out.println("looks like the museum is full :(");
+                        try {
+                            Art sculpture = new Sculptures(id, date, artist, material, name);
+                            if (m1.addArt(sculpture)) 
+                                System.out.println("Sculpture added successfully :)");
+                            else 
+                                System.out.println("looks like the museum is full :(");
+                        } catch (InvalidArtIdException e) {
+                            System.out.println(e.toString());
+                        }
                         
                     }
                     else 

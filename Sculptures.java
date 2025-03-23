@@ -4,7 +4,7 @@ public class Sculptures extends Art {
 
     private String typeOfSculp;
 
-    public Sculptures(int id, String date, String artist, String typeOfSculp, String name) {
+    public Sculptures(int id, String date, String artist, String typeOfSculp, String name) throws InvalidArtIdException {
         super(id, date, artist, name);
         this.typeOfSculp = typeOfSculp;
     }

@@ -4,7 +4,7 @@ public class Paintings extends Art {
     
     private String typeOfPainting;
 
-    public Paintings(int id, String date, String artist, String typeOfPainting, String name) {
+    public Paintings(int id, String date, String artist, String typeOfPainting, String name)throws InvalidArtIdException {
         super(id, date, artist, name);
         this.typeOfPainting = typeOfPainting;
     }
