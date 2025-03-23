@@ -1,3 +1,4 @@
+import java.io.*;
 public class Museum {
     
     private String name;

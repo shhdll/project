@@ -109,7 +109,7 @@ public class TestMuseum {
                         System.out.print("Enter Name: ");
                         String name = input.nextLine();
                         System.out.print("Enter Office Number: ");
-                        int ofnum = input.nextInt();
+                        int ofnum = input.nextInt();// add input mismatch exceptin and add a loop
                         
                         Manager objM = new Manager(hours,name,ofnum);
 
@@ -126,7 +126,7 @@ public class TestMuseum {
                         String name2 = input.nextLine();
                         
                         System.out.print("Enter years of experience : ");
-                        int yearOfEx = input.nextInt();
+                        int yearOfEx = input.nextInt();// add input mismatch exceptin
 
                         Artist a = new Artist(hours2, name2, yearOfEx);
                         if (m1.addStaff(a)) 
@@ -142,9 +142,9 @@ public class TestMuseum {
                         String name3 = input.nextLine();
                         
                         System.out.print("Enter years of experience : ");
-                        int yearOfEx1 = input.nextInt();
+                        int yearOfEx1 = input.nextInt();// add input mismatch exceptin
                         System.out.print("Enter number Of Inspections : ");
-                        int Inspections = input.nextInt();
+                        int Inspections = input.nextInt();// add input mismatch exceptin
 
                         Inspector objI = new Inspector(hours3,name3,yearOfEx1,Inspections);
 
@@ -164,7 +164,7 @@ public class TestMuseum {
 
                 	    Art artToRemove = m1.searchArt(removeName);
                 	    
-                	    if (artToRemove != null) {
+                	    if (artToRemove != null) { 
                 	        if (m1.removeArt(artToRemove)) 
                 	            System.out.println("Art removed successfully :)");
                 	         else 
