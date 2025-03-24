@@ -1,4 +1,6 @@
+package project;
 import java.util.Scanner;
+import java.util.*;
 
 public class TestMuseum {
     public static void main(String[] args) {
@@ -106,66 +108,133 @@ public class TestMuseum {
                     
                 		                	
                     break;
+                    
                 case 2:  //add staff
-                	  input.nextLine();
+                    input.nextLine();
                     System.out.println("Enter M for Manager, A for Artist , I for Inspector");
                     char staffChoice = input.next().charAt(0);
                     input.nextLine(); // clean garbage
                     switch(staffChoice){
                         case 'M': case 'm':
-                        System.out.print("Enter Hours: ");
-                        int hours = input.nextInt();input.nextLine();
-                        System.out.print("Enter Name: ");
-                        String name = input.nextLine();
-                        System.out.print("Enter Office Number: ");
-                        int ofnum = input.nextInt();// add input mismatch exceptin and add a loop
-                        
-                        Manager objM = new Manager(hours,name,ofnum);
+                            System.out.print("Enter Hours: ");
+                            int hours = 0;
+                            boolean validInput = false;
+                            while (!validInput) {
+                                try {
+                                    hours = input.nextInt();
+                                    validInput = true;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Invalid input. Please enter a valid integer for hours.");
+                                    input.nextLine(); // Clear garbage
+                                }
+                            }
 
-                        if (m1.addStaff(objM)) 
-                            System.out.println("Manager added successfully :)");
-                         else 
-                            System.out.println("looks like the museum is full :(");
+                            System.out.print("Enter Name: ");
+                            String name = input.nextLine();
+                            System.out.print("Enter Office Number: ");
+                            int ofnum = input.nextInt(); // add input mismatch exception and add a loop
+                            
+                            Manager objM = new Manager(hours, name, ofnum);
+
+                            if (m1.addStaff(objM)) 
+                                System.out.println("Manager added successfully :)");
+                            else 
+                                System.out.println("looks like the museum is full :(");
                             break;
+
                         case 'A': case 'a':
+                            System.out.print("Enter Hours: ");
+                            int hours2 = 0;
+                            boolean validInput2 = false;
+                            while (!validInput2) {
+                                try {
+                                    hours2 = input.nextInt();
+                                    validInput2 = true;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Invalid input. Please enter a valid integer for hours.");
+                                    input.nextLine(); // Clear garbage
+                                }}
 
-                        System.out.print("Enter Hours: ");
-                        int hours2 = input.nextInt();input.nextLine();
-                        System.out.print("Enter Name: ");
-                        String name2 = input.nextLine();
-                        
-                        System.out.print("Enter years of experience : ");
-                        int yearOfEx = input.nextInt();// add input mismatch exceptin
+                            System.out.print("Enter Name: ");
+                            String name2 = input.nextLine();
+                            
+                            System.out.print("Enter years of experience: ");
+                            int yearOfEx = 0;
+                            boolean validInput3 = false;
+                            while (!validInput3) {
+                                try {
+                                    yearOfEx = input.nextInt();
+                                    validInput3 = true;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Invalid input. Please enter a valid integer for years of experience.");
+                                    input.nextLine(); // Clear garbage
+                                }
+                            }
 
-                        Artist a = new Artist(hours2, name2, yearOfEx);
-                        if (m1.addStaff(a)) 
-                        System.out.println("Artist added successfully :)");
-                        else 
-                        System.out.println("looks like the museum is full :(");
+                            Artist a = new Artist(hours2, name2, yearOfEx);
+                            if (m1.addStaff(a)) 
+                                System.out.println("Artist added successfully :)");
+                            else 
+                                System.out.println("looks like the museum is full :(");
+                            break;
+
+                        case 'I': case 'i':
+                            System.out.print("Enter Hours: ");
+                            int hours3 = 0;
+                            boolean validInput4 = false;
+                            while (!validInput4) {
+                                try {
+                                    hours3 = input.nextInt();
+                                    validInput4 = true;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Invalid input. Please enter a valid integer for hours.");
+                                    input.nextLine(); // Clear garbage
+                                }
+                            }
+
+                            System.out.print("Enter Name: ");
+                            input.nextLine(); // Clear garage
+                            String name3 = input.nextLine();
+                            
+
+                            System.out.print("Enter years of experience: ");
+                            int yearOfEx1 = 0;
+                            boolean validInput5 = false;
+                            while (!validInput5) {
+                                try {
+                                    yearOfEx1 = input.nextInt();
+                                    validInput5 = true;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Invalid input. Please enter a valid integer for years of experience.");
+                                    input.nextLine(); // Clear garage
+                                }
+                            }
+
+                            System.out.print("Enter number Of Inspections: ");
+                            int Inspections = 0;
+                            boolean validInput6 = false;
+                            while (!validInput6) {
+                                try {
+                                    Inspections = input.nextInt();
+                                    validInput6 = true;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Invalid input. Please enter a valid integer for number of inspections.");
+                                    input.nextLine(); // Clear garbage
+                                }
+                            }
+
+                            Inspector objI = new Inspector(hours3, name3, yearOfEx1, Inspections);
+
+                            if (m1.addStaff(objI)) 
+                                System.out.println("Inspector added successfully :)");
+                            else 
+                                System.out.println("Looks like the museum is full :(");
+                            break;
+
+                        }
+
+                    	
                         break;
-
-                        case 'I':case'i':
-                        System.out.print("Enter Hours: ");
-                        int hours3 = input.nextInt();input.nextLine();
-                        System.out.print("Enter Name: ");
-                        String name3 = input.nextLine();
-                        
-                        System.out.print("Enter years of experience : ");
-                        int yearOfEx1 = input.nextInt();// add input mismatch exceptin
-                        System.out.print("Enter number Of Inspections : ");
-                        int Inspections = input.nextInt();// add input mismatch exceptin
-
-                        Inspector objI = new Inspector(hours3,name3,yearOfEx1,Inspections);
-
-                        if (m1.addStaff(objI)) 
-                            System.out.println("Inspector added successfully :)");
-                         else 
-                            System.out.println("looks like the museum is full :(");
-                        break;
-                    }
-
-                	
-                    break;
                 case 3:   //remove art
                 	 input.nextLine();
                 	 System.out.println("Enter the Name of the art piece to remove:");
