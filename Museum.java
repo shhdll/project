@@ -1,3 +1,4 @@
+//package project;
 import java.io.*;
 public class Museum {
     
@@ -6,23 +7,61 @@ public class Museum {
     private int numOfStaff;
     private int numOfPaintings;
     private int numOfSculptures;
-    private Art ArtList[];
-    private Staff StaffList[];
+    private LinkedList ArtList;
+    private LinkedList StaffList;
 
     public Museum(String name, int sizeOfArt, int sizeOfStaff) {
         this.name = name;
         numOfArts = 0;
         numOfStaff = 0;
-        ArtList = new Art[sizeOfArt];
-        StaffList = new Staff[sizeOfStaff];
+        ArtList = new LinkedList(); 
+        StaffList = new LinkedList();
         numOfPaintings = 0;
         numOfSculptures = 0;    
     }
-
+    
+    public void saveToFile(String filename) {
+        ObjectOutputStream out = null;
+        try {
+            out = new ObjectOutputStream(new FileOutputStream(filename));
+            out.writeObject(this); // Serialize the entire Museum object
+            System.out.println("✅ Museum data saved successfully!");
+        } catch (IOException e) {
+            System.out.println("❌ Error saving museum data: " + e.getMessage());
+        } finally {
+            if (out != null) {
+                try {
+                    out.close(); // Manually close the stream
+                } catch (IOException e) {
+                    System.out.println("❌ Error closing file: " + e.getMessage());
+                }
+            }
+        }
+    }
+    
+    public static Museum loadFromFile(String filename) {
+        ObjectInputStream in = null;
+        try {
+            in = new ObjectInputStream(new FileInputStream(filename));
+            return (Museum) in.readObject(); // Deserialize the Museum object
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("❌ Error loading museum data. Creating a new Museum.");
+            return new Museum("Harmony Museum", 100, 50); // Default if file not found
+        } finally {
+            if (in != null) {
+                try {
+                    in.close(); // Manually close the stream
+                } catch (IOException e) {
+                    System.out.println("❌ Error closing file: " + e.getMessage());
+                }
+            }
+        }
+    }
     public boolean addArt(Art a) { //aggregation
-        if (numOfArts >= ArtList.length)
-            return false;
-        ArtList[numOfArts++] = a;
+    	   if (ArtList.getSize() == 0)  // This condition will never be true, should be corrected
+               return false;
+
+           ArtList.add(a);
 
         if (a instanceof Paintings) //check if art is a painting
             numOfPaintings++;
@@ -33,86 +72,81 @@ public class Museum {
         return true;
     }
 
-    public boolean removeArt(Art a) { //aggregation
-        if (numOfArts > 0) {
-            for (int i = 0; i < numOfArts; i++) {
-                if (ArtList[i].getId() == a.getId()) {
-                    ArtList[i] = ArtList[numOfArts - 1];
-                    ArtList[--numOfArts] = null;
-
-            if (a instanceof Paintings) //check if art is a painting
-                numOfPaintings--;
-
-            if (a instanceof Sculptures) //check if art is a sculpture
-                numOfSculptures--;
-
+    public boolean removeArt(Art a) { // Aggregation
+        if (a == null || ArtList.getSize() == 0) return false;
+        if (ArtList.remove(a)) {
+            if (a instanceof Paintings) numOfPaintings--;
+            if (a instanceof Sculptures) numOfSculptures--;
             return true;
-                }
-            }
         }
         return false;
     }
 
     public Art searchArt(String name) { //aggregation
-        for (int i = 0; i < numOfArts ; i++) {
-            if (ArtList[i].getName().equals(name))
-                return ArtList[i];
-        }
-        return null;
+            Art result = (Art)ArtList.search(name);
+                return result;
     }
 
     public boolean addStaff(Staff e) { //composition
-       if (numOfStaff >= StaffList.length)
+    	if (StaffList.getSize() == 0)  // This condition will never be true, should be corrected
             return false;
+
+        StaffList.add(e);
+
         
-        if (e instanceof Manager) 
-            StaffList[numOfStaff++] = new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()); 
-        
-        else if (e instanceof Inspector) 
-            StaffList[numOfStaff++] = new Inspector(e.getHours(),e.getName(),((Inspector)e).getYearOfEx(),((Inspector)e).getNumOfInspections());
-        
-        else if (e instanceof Artist) 
-            StaffList[numOfStaff++] = new Artist(e.getHours(), e.getName(), ((Artist) e).getYearOfEx()); 
+        if (e instanceof Manager) {
+            StaffList.add(new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()));
+        } else if (e instanceof Inspector) {
+            StaffList.add(new Inspector(e.getHours(), e.getName(), ((Inspector) e).getYearOfEx(), ((Inspector) e).getNumOfInspections()));
+        } else if (e instanceof Artist) {
+            StaffList.add(new Artist(e.getHours(), e.getName(), ((Artist) e).getYearOfEx()));
+        }
         
         return true;
     }
 
-    public boolean removeStaff(Staff e) { //composition
-        if (numOfStaff > 0)
-            for (int i = 0; i < numOfStaff; i++) {
-                if (StaffList[i].getName().equals(e.getName())) {
-                    StaffList[i] = StaffList[numOfStaff - 1];
-                    StaffList[--numOfStaff] = null;
-                    return true;
-                }
-            }
-        return false;
+    public boolean removeStaff(Staff e) { // Composition
+        if (e == null || StaffList.getSize() == 0) return false; // Check if staff object is null or list is empty
+
+        // Try to remove the staff member from the list
+        if (StaffList.remove(e)) {
+            numOfStaff--; // Decrease the staff count
+            return true;
+        }
+        return false; // Return false if removal fails
     }
+
     
     
 
     public Staff searchStaff(String name) { //composition 
-        for (int i = 0; i < numOfStaff; i++) {
-            if (StaffList[i].getName().equals(name))
-                return StaffList[i];
-        }
-        return null;
-    }
+    	 Staff result = (Staff)StaffList.search(name);
+         return result;
+}
     @Override
     public String toString() {
-        String s = "The name of our museum is: "+name+"\n";
-        s += "We have " +numOfArts+ " art pieces are "+ numOfPaintings + " paintings and " + numOfSculptures + " sculptures\n\n";
-       
-        s += "Art Pieces:\n";
-        for(int i = 0; i < numOfArts; i++) 
-            s += "  ✦ " + ArtList[i].toString() + "\n";
-        
-        s += "\nand we have " + numOfStaff + " employees:\n";
-        for(int i = 0; i < numOfStaff; i++) 
-            s += "  ✦ " + StaffList[i].toString() + "\n";
-        
-        return s;
+        StringBuilder s = new StringBuilder();
+        s.append("The name of our museum is: ").append(name).append("\n");
+        s.append("We have ").append(ArtList.getSize()).append(" art pieces: ")
+            .append(numOfPaintings).append(" paintings and ").append(numOfSculptures).append(" sculptures\n\n");
+
+        s.append("Art Pieces:\n");
+        Node temp = ArtList.getHead();  // Get the head node of the linked list
+        while (temp != null) {
+            s.append("  ✦ ").append(temp.data.toString()).append("\n");
+            temp = temp.next;
+        }
+
+        s.append("\nand we have ").append(numOfStaff).append(" employees:\n");
+        Node staffNode = StaffList.getHead(); // Assuming StaffList is a LinkedList
+        while (staffNode != null) {
+            s.append("  ✦ ").append(staffNode.data.toString()).append("\n");
+            staffNode = staffNode.next;
+        }
+
+        return s.toString();
     }
+
     public String getName() {
         return name;
     }
