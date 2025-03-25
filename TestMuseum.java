@@ -1,4 +1,5 @@
 //package project;
+import java.util.Scanner;
 import java.util.*;
 
 public class TestMuseum {
@@ -7,6 +8,8 @@ public class TestMuseum {
         Museum m1 = new Museum("Harmony museum", 100, 50);
         System.out.println("───────── ✦ Welcome Harmony museum ✦ ─────────  \n"
         		+ "         discover the wonders within!\n\n");
+        
+        m1 = Museum.loadFromFile("museum_data.dat");
         
         Staff s1 = new Manager(40, "shams", 455);
         Staff s2 = new Artist(20, "jawaher", 16);
