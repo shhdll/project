@@ -1,23 +1,62 @@
-package packageMain;
-
-//package project;
+package project;
 import java.util.*;
-
-public class TestMuseum {
+import java.io.*;
+public class TestMuseum  {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Museum m1 = new Museum("Harmony museum", 100, 50);
         System.out.println("───────── ✦ Welcome Harmony museum ✦ ─────────  \n"
         		+ "         discover the wonders within!\n\n");
         
-        m1 = Museum.loadFromFile("museum_data.dat");
+      
+       
+        int i=0;
+        int i2=0; 
+        String s="";
+        int j=0;
+        int j2=0;
+        String h="";
+        int u=0;
+        int u2=0;
+        String l="";
+        int u3=0;
         
-        Staff s1 = new Manager(40, "shams", 455);
-        Staff s2 = new Artist(20, "jawaher", 16);
-        Inspector s3 = new Inspector(25, "shahad", 5, 15);
         try {
-            Art a1 = new Paintings(120, "1519", "Leonardo da Vinci", "oil painting", "Mona Lisa");
-            Sculptures a2 = new Sculptures(113, "1345 BC", "ancient Egyptian", "clay", "Nefertiti");
+        	File F1 = new File("museumInput.txt");
+            Scanner fn = new Scanner(F1);
+
+            i = fn.nextInt();
+             s = fn.next();
+             i2 = fn.nextInt();
+             j = fn.nextInt();
+             h = fn.next();
+              j2 = fn.nextInt();
+             u = fn.nextInt();
+             l = fn.next();
+             u2 = fn.nextInt();
+            u3 = fn.nextInt();
+         
+            fn.close();
+            
+            
+        }catch(IOException e) {
+            System.out.println("!!");
+
+        }
+        Staff s1 = new Manager(i,s,i2);
+        Staff s2 = new Artist(j,h, j2);
+        Inspector s3 = new Inspector(u, l, u2, u3);
+        
+        
+        
+     
+      //  Staff s1 = new Manager(40, "shams", 455);
+       // Staff s2 = new Artist(20, "jawaher", 16);
+     //   Inspector s3 = new Inspector(25, "shahad", 5, 15);
+        
+        try {
+          Art a1 = new Paintings(120, "1519", "Leonardo da Vinci", "oil painting", "Mona Lisa");
+          Sculptures a2 = new Sculptures(113, "1345 BC", "ancient Egyptian", "clay", "Nefertiti");
             m1.addArt(a1);
             m1.addArt(a2);
         } catch (InvalidArtIdException e) {
@@ -26,9 +65,9 @@ public class TestMuseum {
         
        
         
-        m1.addStaff(s1);
-        m1.addStaff(s2);
-        m1.addStaff(s3);
+     //   m1.addStaff(s1);
+      //  m1.addStaff(s2);
+      //  m1.addStaff(s3);
         
         int choice;
         boolean b = true;
@@ -260,10 +299,10 @@ public class TestMuseum {
                 	 System.out.println("Enter staff name to remove: ");
                 	    
                 	    String staffName = input.nextLine();
-                	    Staff s = m1.searchStaff(staffName);
+                	    Staff s6 = m1.searchStaff(staffName);
                 	    
                 	    if (s != null) { 
-                	        if (m1.removeStaff(s))
+                	        if (m1.removeStaff(s6))
                 	            System.out.println("Staff removed");
                 	        else
                 	            System.out.println("Failed to remove.");
@@ -289,6 +328,23 @@ public class TestMuseum {
                         break;
                 case 7:
                 	
+                	try {
+                		File f2 = new File("museumOutput.dat");
+                		FileOutputStream ops = new FileOutputStream(f2);
+                		ObjectOutputStream oos = new ObjectOutputStream(ops);
+                		
+                		oos.writeObject(m1);
+                		
+                		oos.close();
+                    	ops.close();
+                    	
+                	}
+                	catch (IOException e) {
+                		System.out.println("!!");
+                	}
+                	
+                	
+                	
                     b = false;
                     System.out.print("Thank you for using our system!");
                     break;
@@ -297,4 +353,5 @@ public class TestMuseum {
             }
         } while(b);
     }
+   
 }
