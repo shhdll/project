@@ -1,5 +1,6 @@
+package packageMain;
+
 //package project;
-import java.util.Scanner;
 import java.util.*;
 
 public class TestMuseum {

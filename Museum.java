@@ -1,3 +1,5 @@
+package packageMain;
+
 //package project;
 import java.io.*;
 public class Museum {
@@ -58,10 +60,10 @@ public class Museum {
         }
     }
     public boolean addArt(Art a) { //aggregation
-    	   if (ArtList.getSize() == 0)  // This condition will never be true, should be corrected
+    	   if (ArtList.isEmpty())  // This condition will never be true, should be corrected
                return false;
 
-           ArtList.add(a);
+           ArtList.insertAtFront(a);
 
         if (a instanceof Paintings) //check if art is a painting
             numOfPaintings++;
@@ -73,8 +75,8 @@ public class Museum {
     }
 
     public boolean removeArt(Art a) { // Aggregation
-        if (a == null || ArtList.getSize() == 0) return false;
-        if (ArtList.remove(a)) {
+        if (a == null || ArtList.isEmpty()) return false;
+        if (ArtList.removeFromBack(a)) {
             if (a instanceof Paintings) numOfPaintings--;
             if (a instanceof Sculptures) numOfSculptures--;
             return true;
@@ -88,28 +90,28 @@ public class Museum {
     }
 
     public boolean addStaff(Staff e) { //composition
-    	if (StaffList.getSize() == 0)  // This condition will never be true, should be corrected
+    	if (StaffList.isEmpty())  // This condition will never be true, should be corrected
             return false;
 
-        StaffList.add(e);
+        StaffList.insertAtFront(e);
 
         
         if (e instanceof Manager) {
-            StaffList.add(new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()));
+            StaffList.insertAtFront(new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()));
         } else if (e instanceof Inspector) {
-            StaffList.add(new Inspector(e.getHours(), e.getName(), ((Inspector) e).getYearOfEx(), ((Inspector) e).getNumOfInspections()));
+            StaffList.insertAtFront(new Inspector(e.getHours(), e.getName(), ((Inspector) e).getYearOfEx(), ((Inspector) e).getNumOfInspections()));
         } else if (e instanceof Artist) {
-            StaffList.add(new Artist(e.getHours(), e.getName(), ((Artist) e).getYearOfEx()));
+            StaffList.insertAtFront(new Artist(e.getHours(), e.getName(), ((Artist) e).getYearOfEx()));
         }
         
         return true;
     }
 
     public boolean removeStaff(Staff e) { // Composition
-        if (e == null || StaffList.getSize() == 0) return false; // Check if staff object is null or list is empty
+        if (e == null || StaffList.isEmpty()) return false; // Check if staff object is null or list is empty
 
         // Try to remove the staff member from the list
-        if (StaffList.remove(e)) {
+        if (StaffList.removeFromBack(e)) {
             numOfStaff--; // Decrease the staff count
             return true;
         }
@@ -127,8 +129,7 @@ public class Museum {
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append("The name of our museum is: ").append(name).append("\n");
-        s.append("We have ").append(ArtList.getSize()).append(" art pieces: ")
-            .append(numOfPaintings).append(" paintings and ").append(numOfSculptures).append(" sculptures\n\n");
+        s.append(numOfPaintings).append(" paintings and ").append(numOfSculptures).append(" sculptures\n\n");
 
         s.append("Art Pieces:\n");
         Node temp = ArtList.getHead();  // Get the head node of the linked list

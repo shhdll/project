@@ -1,3 +1,5 @@
+package packageMain;
+
 //package project;
 
 public class Manager extends Staff {

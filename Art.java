@@ -1,4 +1,6 @@
-//package project;
+package packageMain ;
+
+import packageMain.InvalidArtIdException;
 
 public class Art {
 

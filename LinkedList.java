@@ -1,84 +1,95 @@
-package project;
+package packageMain;
 
+//package project;
 
 public class LinkedList {
-private Node head;
-private int size;
+    private Node head;
 
-public LinkedList() {
-    head = null;
-    size = 0;
-}
+    // Constructor
+    public LinkedList() {
+        this.head = null;
+    }
 
-// Add an item to the list
-public void add(Object data) {
-    Node newNode = new Node(data);
-    if (head == null) {
+    // Insert at front
+    public void insertAtFront(Object data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
         head = newNode;
-    } else {
-        Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = newNode;
     }
-    size++;
-}
 
-// Remove an item from the list
-public boolean remove(Object data) {
-    if (head == null) return false;
+    // Insert at back
+    public void insertAtBack(Object data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
 
-    if (head.data.equals(data)) {
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
+
+    // Remove from front
+    public void removeFromFront() {
+        if (head == null) return;
         head = head.next;
-        size--;
-        return true;
     }
 
-    Node temp = head;
-    while (temp.next != null) {
-        if (temp.next.data.equals(data)) {
-            temp.next = temp.next.next;
-            size--;
-            return true;
-        }
-        temp = temp.next;
-    }
-    return false;
-}
+    // Remove from back
+    public void removeFromBack() {
+        if (head == null) return;
 
-// Search for an item in the list
-public Object search(String name) {
-    Node temp = head;
-    while (temp != null) {
-        if (temp.data instanceof Art && ((Art) temp.data).getName().equals(name)) {
-            return temp.data;
+        if (head.next == null) {
+            head = null;
+            return;
         }
-        if (temp.data instanceof Staff && ((Staff) temp.data).getName().equals(name)) {
-            return temp.data;
+
+        Node current = head;
+        while (current.next.next != null) {
+            current = current.next;
         }
-        temp = temp.next;
+        current.next = null;
+    }
+
+    // Check if list is empty
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    // Get size of list
+    public int size() {
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
+   
+    public void printList() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+    public Node getHead(){
+        return this.head;
+    }
+    public Node search(Object data) {
+    Node current = head;
+    while (current != null) {
+        if (current.data.equals(data) ) {
+            return current;
+        }
+        current = current.next;
     }
     return null;
 }
-
-// Get the number of elements in the list
-public int getSize() {
-    return size;
 }
-
-// Display all elements in the list
-public void display() {
-    Node temp = head;
-    while (temp != null) {
-        System.out.println(temp.data);
-        temp = temp.next;
-    }
-}
-public Node getHead() {
-    return head;  // Returns the head node of the LinkedList
-}
-
-}
-
-

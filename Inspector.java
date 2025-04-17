@@ -1,3 +1,5 @@
+package packageMain;
+
 public class Inspector extends Artist {
 	
 	private int numOfInspections;
