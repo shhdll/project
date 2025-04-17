@@ -1,8 +1,6 @@
-package packageMain;
-
-//package project;
+package project;
 import java.io.*;
-public class Museum {
+public class Museum implements Serializable {
     
     private String name;
     private int numOfArts;
@@ -22,43 +20,11 @@ public class Museum {
         numOfSculptures = 0;    
     }
     
-    public void saveToFile(String filename) {
-        ObjectOutputStream out = null;
-        try {
-            out = new ObjectOutputStream(new FileOutputStream(filename));
-            out.writeObject(this); // Serialize the entire Museum object
-            System.out.println("✅ Museum data saved successfully!");
-        } catch (IOException e) {
-            System.out.println("❌ Error saving museum data: " + e.getMessage());
-        } finally {
-            if (out != null) {
-                try {
-                    out.close(); // Manually close the stream
-                } catch (IOException e) {
-                    System.out.println("❌ Error closing file: " + e.getMessage());
-                }
-            }
-        }
-    }
     
-    public static Museum loadFromFile(String filename) {
-        ObjectInputStream in = null;
-        try {
-            in = new ObjectInputStream(new FileInputStream(filename));
-            return (Museum) in.readObject(); // Deserialize the Museum object
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("❌ Error loading museum data. Creating a new Museum.");
-            return new Museum("Harmony Museum", 100, 50); // Default if file not found
-        } finally {
-            if (in != null) {
-                try {
-                    in.close(); // Manually close the stream
-                } catch (IOException e) {
-                    System.out.println("❌ Error closing file: " + e.getMessage());
-                }
-            }
-        }
-    }
+   
+
+    
+  
     public boolean addArt(Art a) { //aggregation
     	   if (ArtList.isEmpty())  // This condition will never be true, should be corrected
                return false;
@@ -155,4 +121,5 @@ public class Museum {
     public void setName(String name) {
         this.name = name;
     }
+  
 }
