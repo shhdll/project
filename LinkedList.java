@@ -1,6 +1,4 @@
-package packageMain;
-
-//package project;
+package project;
 
 public class LinkedList {
     private Node head;
@@ -33,13 +31,13 @@ public class LinkedList {
     }
 
     // Remove from front
-    public void removeFromFront() {
+    public void removeFromFront(Object data) {
         if (head == null) return;
         head = head.next;
     }
 
     // Remove from back
-    public void removeFromBack() {
+    public void removeFromBack(Object data) {
         if (head == null) return;
 
         if (head.next == null) {
