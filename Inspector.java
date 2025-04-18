@@ -1,4 +1,4 @@
-package packageMain;
+//package packageMain;
 
 public class Inspector extends Artist {
 	

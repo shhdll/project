@@ -1,4 +1,4 @@
-package project;
+//package project;
 
 public class LinkedList {
     private Node head;
@@ -31,18 +31,19 @@ public class LinkedList {
     }
 
     // Remove from front
-    public void removeFromFront(Object data) {
-        if (head == null) return;
+    public boolean removeFromFront(Object data) {
+        if (head == null) return false;
         head = head.next;
+        return true;
     }
 
     // Remove from back
-    public void removeFromBack(Object data) {
-        if (head == null) return;
+    public boolean removeFromBack(Object data) {
+        if (head == null) return false;
 
         if (head.next == null) {
             head = null;
-            return;
+            return false;
         }
 
         Node current = head;
@@ -50,6 +51,7 @@ public class LinkedList {
             current = current.next;
         }
         current.next = null;
+        return true;
     }
 
     // Check if list is empty
@@ -80,14 +82,43 @@ public class LinkedList {
     public Node getHead(){
         return this.head;
     }
-    public Node search(Object data) {
+   /* public Object search(String data) {
     Node current = head;
     while (current != null) {
         if (current.data.equals(data) ) {
-            return current;
+            return current.data;
         }
         current = current.next;
     }
     return null;
 }
+    */
+    public Object search(String data) {
+        Node current = head;
+        while (current != null) {
+            Object obj = current.data;
+    
+            if (obj instanceof Art) {
+                Art art = (Art) obj;
+                if (art.getName().equals(data)) {
+                    return art;
+                }
+            } else if (obj instanceof Artist) {
+                Artist artist = (Artist) obj;
+                if (artist.getName().equals(data)) {
+                    return artist;
+                }
+            } else if (obj instanceof Inspector) {
+                Inspector inspector = (Inspector) obj;
+                if (inspector.getName().equals(data)) {
+                    return inspector;
+                }
+            }
+            // Add more conditions if needed for Manager, etc.
+            
+            current = current.next;
+        }
+        return null;
+    }
+    
 }

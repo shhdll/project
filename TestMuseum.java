@@ -1,6 +1,6 @@
-package project;
-import java.util.*;
+//package project;
 import java.io.*;
+import java.util.*;
 public class TestMuseum  {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -10,31 +10,23 @@ public class TestMuseum  {
         
       
        
-        int i=0;
-        int i2=0; 
-        String s="";
-        int j=0;
-        int j2=0;
-        String h="";
-        int u=0;
-        int u2=0;
-        String l="";
-        int u3=0;
+        int int1=0, int2=0, int3=0, int4=0, int5=0, int6=0, int7=0;
+        String str1="", str2="", str3="";
         
         try {
         	File F1 = new File("museumInput.txt");
             Scanner fn = new Scanner(F1);
 
-            i = fn.nextInt();
-             s = fn.next();
-             i2 = fn.nextInt();
-             j = fn.nextInt();
-             h = fn.next();
-              j2 = fn.nextInt();
-             u = fn.nextInt();
-             l = fn.next();
-             u2 = fn.nextInt();
-            u3 = fn.nextInt();
+            int1 = fn.nextInt();
+            str1 = fn.next();
+             int2 = fn.nextInt();
+             int3 = fn.nextInt();
+             str2 = fn.next();
+             int4 = fn.nextInt();
+             int5 = fn.nextInt();
+             str3 = fn.next();
+             int6 = fn.nextInt();
+             int7 = fn.nextInt();
          
             fn.close();
             
@@ -43,9 +35,9 @@ public class TestMuseum  {
             System.out.println("!!");
 
         }
-        Staff s1 = new Manager(i,s,i2);
-        Staff s2 = new Artist(j,h, j2);
-        Inspector s3 = new Inspector(u, l, u2, u3);
+        Staff s1 = new Manager(int1,str1,int2);
+        Staff s2 = new Artist(int3,str2, int4);
+        Inspector s3 = new Inspector(int5, str3, int6, int7);
         
         
         
@@ -301,7 +293,7 @@ public class TestMuseum  {
                 	    String staffName = input.nextLine();
                 	    Staff s6 = m1.searchStaff(staffName);
                 	    
-                	    if (s != null) { 
+                	    if (s6 != null) { 
                 	        if (m1.removeStaff(s6))
                 	            System.out.println("Staff removed");
                 	        else

@@ -1,4 +1,4 @@
-package project;
+//package project;
 import java.io.*;
 public class Museum implements Serializable {
     
@@ -26,10 +26,8 @@ public class Museum implements Serializable {
     
   
     public boolean addArt(Art a) { //aggregation
-    	   if (ArtList.isEmpty())  // This condition will never be true, should be corrected
-               return false;
-
            ArtList.insertAtFront(a);
+           numOfArts++;   // Inside addArt()
 
         if (a instanceof Paintings) //check if art is a painting
             numOfPaintings++;
@@ -56,20 +54,14 @@ public class Museum implements Serializable {
     }
 
     public boolean addStaff(Staff e) { //composition
-    	if (StaffList.isEmpty())  // This condition will never be true, should be corrected
-            return false;
-
-        StaffList.insertAtFront(e);
-
-        
-        if (e instanceof Manager) {
+    	if (e instanceof Manager) {
             StaffList.insertAtFront(new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()));
         } else if (e instanceof Inspector) {
             StaffList.insertAtFront(new Inspector(e.getHours(), e.getName(), ((Inspector) e).getYearOfEx(), ((Inspector) e).getNumOfInspections()));
         } else if (e instanceof Artist) {
             StaffList.insertAtFront(new Artist(e.getHours(), e.getName(), ((Artist) e).getYearOfEx()));
         }
-        
+        numOfStaff++;  // Inside addStaff()
         return true;
     }
 
