@@ -1,7 +1,6 @@
 //package project;
 import java.io.*;
 public class Museum implements Serializable {
-    
     private String name;
     private int numOfArts;
     private int numOfStaff;
@@ -9,7 +8,6 @@ public class Museum implements Serializable {
     private int numOfSculptures;
     private LinkedList ArtList;
     private LinkedList StaffList;
-
     public Museum(String name, int sizeOfArt, int sizeOfStaff) {
         this.name = name;
         numOfArts = 0;
@@ -19,12 +17,6 @@ public class Museum implements Serializable {
         numOfPaintings = 0;
         numOfSculptures = 0;    
     }
-    
-    
-   
-
-    
-  
     public boolean addArt(Art a) { //aggregation
            ArtList.insertAtFront(a);
            numOfArts++;   // Inside addArt()
@@ -37,7 +29,6 @@ public class Museum implements Serializable {
 
         return true;
     }
-
     public boolean removeArt(Art a) { // Aggregation
         if (a == null || ArtList.isEmpty()) return false;
         if (ArtList.removeFromBack(a)) {
@@ -47,12 +38,10 @@ public class Museum implements Serializable {
         }
         return false;
     }
-
     public Art searchArt(String name) { //aggregation
             Art result = (Art)ArtList.search(name);
                 return result;
     }
-
     public boolean addStaff(Staff e) { //composition
     	if (e instanceof Manager) {
             StaffList.insertAtFront(new Manager(e.getHours(), e.getName(), ((Manager) e).getOfficeNum()));
@@ -64,7 +53,6 @@ public class Museum implements Serializable {
         numOfStaff++;  // Inside addStaff()
         return true;
     }
-
     public boolean removeStaff(Staff e) { // Composition
         if (e == null || StaffList.isEmpty()) return false; // Check if staff object is null or list is empty
 
@@ -75,10 +63,6 @@ public class Museum implements Serializable {
         }
         return false; // Return false if removal fails
     }
-
-    
-    
-
     public Staff searchStaff(String name) { //composition 
     	 Staff result = (Staff)StaffList.search(name);
          return result;
@@ -95,23 +79,14 @@ public class Museum implements Serializable {
             s.append("  ✦ ").append(temp.data.toString()).append("\n");
             temp = temp.next;
         }
-
         s.append("\nand we have ").append(numOfStaff).append(" employees:\n");
         Node staffNode = StaffList.getHead(); // Assuming StaffList is a LinkedList
         while (staffNode != null) {
             s.append("  ✦ ").append(staffNode.data.toString()).append("\n");
             staffNode = staffNode.next;
         }
-
         return s.toString();
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-  
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
 }

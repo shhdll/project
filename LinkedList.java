@@ -1,20 +1,16 @@
 //package project;
-
 public class LinkedList {
     private Node head;
-
     // Constructor
     public LinkedList() {
         this.head = null;
     }
-
     // Insert at front
     public void insertAtFront(Object data) {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     }
-
     // Insert at back
     public void insertAtBack(Object data) {
         Node newNode = new Node(data);
@@ -22,30 +18,25 @@ public class LinkedList {
             head = newNode;
             return;
         }
-
         Node current = head;
         while (current.next != null) {
             current = current.next;
         }
         current.next = newNode;
     }
-
     // Remove from front
     public boolean removeFromFront(Object data) {
         if (head == null) return false;
         head = head.next;
         return true;
     }
-
     // Remove from back
     public boolean removeFromBack(Object data) {
         if (head == null) return false;
-
         if (head.next == null) {
             head = null;
             return false;
         }
-
         Node current = head;
         while (current.next.next != null) {
             current = current.next;
@@ -53,12 +44,10 @@ public class LinkedList {
         current.next = null;
         return true;
     }
-
     // Check if list is empty
     public boolean isEmpty() {
         return head == null;
     }
-
     // Get size of list
     public int size() {
         int count = 0;
@@ -69,8 +58,6 @@ public class LinkedList {
         }
         return count;
     }
-
-   
     public void printList() {
         Node current = head;
         while (current != null) {
@@ -82,17 +69,6 @@ public class LinkedList {
     public Node getHead(){
         return this.head;
     }
-   /* public Object search(String data) {
-    Node current = head;
-    while (current != null) {
-        if (current.data.equals(data) ) {
-            return current.data;
-        }
-        current = current.next;
-    }
-    return null;
-}
-    */
     public Object search(String data) {
         Node current = head;
         while (current != null) {
@@ -115,10 +91,8 @@ public class LinkedList {
                 }
             }
             // Add more conditions if needed for Manager, etc.
-            
             current = current.next;
         }
         return null;
-    }
-    
+    }    
 }

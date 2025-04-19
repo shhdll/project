@@ -1,9 +1,6 @@
 //package packageMain;
-
 public class Inspector extends Artist {
-	
 	private int numOfInspections;
-	
 	public Inspector (int hours, String name, int yearOfEx,int numOfInspections) {
      		super(hours,name,yearOfEx);
      	        this.numOfInspections=numOfInspections; 
@@ -18,7 +15,6 @@ public class Inspector extends Artist {
 	}
  	//getters, setters
 	public void setNumOfInspections(int numOfInspections){this.numOfInspections=numOfInspections;}
-	
 	public int getNumOfInspections(){return numOfInspections;}
  
 }

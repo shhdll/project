@@ -1,11 +1,7 @@
 //package packageMain;
-
 //package project;
-
 public class Artist extends Staff {
-    
     protected int yearOfEx;
-
     public Artist(int hours, String name, int yearOfEx) {
         super(hours, name);
         this.yearOfEx = yearOfEx;
@@ -20,6 +16,5 @@ public class Artist extends Staff {
     }
     // getters, setters
     public void setYearOfEx(int yearOfEx) { this.yearOfEx = yearOfEx; }
-    
     public int getYearOfEx() { return yearOfEx; }
 }
