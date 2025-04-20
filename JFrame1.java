@@ -1,5 +1,8 @@
 import java.awt.event.ActionEvent;
+import java.awt.*;
 import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
 class JFrame1 extends javax.swing.JFrame implements ActionListener{
 
     /**
@@ -26,6 +29,17 @@ class JFrame1 extends javax.swing.JFrame implements ActionListener{
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+
+        getContentPane().setBackground( new java.awt.Color(68,64,53) );
+        jButton1.setBackground(new java.awt.Color(82,80,67));
+        jButton2.setBackground(new java.awt.Color(82,80,67));
+        jButton3.setBackground(new java.awt.Color(82,80,67));
+        jButton4.setBackground(new java.awt.Color(82,80,67));
+        //jLabel2.setIcon(new ImageIcon("photo_2025-04-20_23-26-31.jpg"));
+        ImageIcon originalIcon = new ImageIcon("photo_2025-04-20_23-26-31.jpg");
+        Image scaledImage = originalIcon.getImage().getScaledInstance(276, 276, Image.SCALE_SMOOTH);
+        jLabel2.setIcon(new ImageIcon(scaledImage));
+
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };

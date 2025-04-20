@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import javax.swing.JTextArea;
 
 /*
@@ -18,6 +19,7 @@ public class JFrameDisplay extends javax.swing.JFrame {
     public JFrameDisplay() {
         initComponents();
         setSize(500, 400);
+        getContentPane().setBackground( new java.awt.Color(68,64,53) );
         
     }
 
@@ -37,6 +39,12 @@ public class JFrameDisplay extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+
+        jButton2.setBackground(new java.awt.Color(82,80,67));
+        jButton1.setBackground(new java.awt.Color(82,80,67));
+        jTextArea1.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
+
+        
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
