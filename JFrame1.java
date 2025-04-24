@@ -51,7 +51,7 @@ class JFrame1 extends javax.swing.JFrame implements ActionListener{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("───────── ✦ Welcome Harmony museum ✦ ───────── ");
-
+        jLabel1.setForeground(new java.awt.Color(245, 235, 224));
         jButton1.setText("Manage Art");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
