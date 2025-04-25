@@ -1,5 +1,3 @@
-//package packageMain;
-//package project;
 public class Artist extends Staff {
     protected int yearOfEx;
     public Artist(int hours, String name, int yearOfEx) {
