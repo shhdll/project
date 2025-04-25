@@ -1,4 +1,3 @@
-//package packageMain;
 public class Inspector extends Artist {
 	private int numOfInspections;
 	public Inspector (int hours, String name, int yearOfEx,int numOfInspections) {
