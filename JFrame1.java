@@ -54,8 +54,8 @@ class JFrame1 extends javax.swing.JFrame implements ActionListener{
         jLabel1.setForeground(new java.awt.Color(245, 235, 224));
         jButton1.setText("Manage Art");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+             public void actionPerformed(ActionEvent evt) {
+                openManageArtGUI(); 
             }
         });
 
@@ -119,9 +119,9 @@ class JFrame1 extends javax.swing.JFrame implements ActionListener{
         pack();
     }// </editor-fold>                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+  private void openManageArtGUI() {
+        new ManageArtGUI(museum); // Pass the Museum instance to ManageArtGUI
+    }                                   
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
