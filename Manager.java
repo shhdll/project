@@ -1,5 +1,3 @@
-//package packageMain;
-//package project;
 public class Manager extends Staff {
 	private int officeNum;
 	public Manager(int hours, String name, int officeNum) {
