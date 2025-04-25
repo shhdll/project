@@ -1,6 +1,3 @@
-//package packageMain;
-//package project;
-
 public abstract class Staff {
     protected int hours;
     protected String name;
