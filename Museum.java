@@ -1,4 +1,3 @@
-//package project;
 import java.io.*;
 public class Museum implements Serializable {
     private String name;
