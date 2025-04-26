@@ -60,6 +60,11 @@ class JFrame1 extends javax.swing.JFrame implements ActionListener{
         });
 
         jButton2.setText("Manage Staff");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("jLabel2");
 
@@ -126,7 +131,11 @@ class JFrame1 extends javax.swing.JFrame implements ActionListener{
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
     }                                        
-
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        StaffMenuJFrame sf = new StaffMenuJFrame();
+        sf.setVisible(true);
+    }    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         JFrameDisplay fd = new JFrameDisplay();
