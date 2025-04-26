@@ -1,10 +1,9 @@
-//package project;
 import java.io.*;
 import java.util.*;
 public class TestMuseum  {
       static Museum m1 = new Museum("Harmony museum", 100, 50);
     public static void main(String[] args) {
-        JFrame1 frame = new JFrame1();
+        JFrame1 frame = new JFrame1(m1);
         frame.setVisible(true);
         Scanner input = new Scanner(System.in);
        

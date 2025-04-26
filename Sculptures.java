@@ -1,5 +1,3 @@
-//package packageMain;
-//package project;
 public class Sculptures extends Art {
     private String typeOfSculp;
     public Sculptures(int id, String date, String artist, String typeOfSculp, String name) throws InvalidArtIdException {
