@@ -2,7 +2,7 @@ public class StaffMenuJFrame extends javax.swing.JFrame {
 
     public StaffMenuJFrame() {
         initComponents();
-        setSize(400, 300); // Set the window size smaller
+        setSize(400, 200); // Set the window size smaller
         setLocationRelativeTo(null); // Center the window on screen
     }
 
@@ -13,6 +13,12 @@ public class StaffMenuJFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        getContentPane().setBackground(new java.awt.Color(68, 64, 53));
+        jButton3.setBackground(new java.awt.Color(82, 80, 67));
+        jButton2.setBackground(new java.awt.Color(82, 80, 67));
+        jLabel2.setForeground(new java.awt.Color(245, 235, 224));
+        jLabel1.setForeground(new java.awt.Color(245, 235, 224));
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
