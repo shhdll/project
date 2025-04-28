@@ -16,6 +16,13 @@ public class RemoveStaffJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        getContentPane().setBackground(new java.awt.Color(68, 64, 53));
+
+        jTextField1.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
+        jLabel1.setForeground(new java.awt.Color(245, 235, 224));
+        jLabel2.setForeground(new java.awt.Color(245, 235, 224));
+        jButton1.setBackground(new java.awt.Color(82, 80, 67));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Remove Staff");
