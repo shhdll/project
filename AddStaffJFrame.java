@@ -1,3 +1,4 @@
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
 public class AddStaffJFrame extends javax.swing.JFrame {
@@ -62,6 +63,11 @@ public class AddStaffJFrame extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(245, 235, 224));
         jLabel5.setForeground(new java.awt.Color(245, 235, 224));
         jLabel6.setForeground(new java.awt.Color(245, 235, 224));
+        ButtonGroup group = new ButtonGroup();
+        group.add(jRadioButton1);
+        group.add(jRadioButton2);
+        group.add(jRadioButton3);
+
 
 
         jScrollPane1.setViewportView(jEditorPane1);
