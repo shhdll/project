@@ -23,26 +23,8 @@ public class LinkedList {
         }
         current.next = newNode;
     }
-    // Remove from front
-    public boolean removeFromFront(Object data) {
-        if (head == null) return false;
-        head = head.next;
-        return true;
-    }
-    // Remove from back
-    public boolean removeFromBack(Object data) {
-        if (head == null) return false;
-        if (head.next == null) {
-            head = null;
-            return false;
-        }
-        Node current = head;
-        while (current.next.next != null) {
-            current = current.next;
-        }
-        current.next = null;
-        return true;
-    }
+  
+    
     // Check if list is empty
     public boolean isEmpty() {
         return head == null;
@@ -57,17 +39,10 @@ public class LinkedList {
         }
         return count;
     }
-    public void printList() {
-        Node current = head;
-        while (current != null) {
-            System.out.print(current.data + " -> ");
-            current = current.next;
-        }
-        System.out.println("null");
-    }
+
     public Node getHead(){
         return this.head;
-    }
+    }  
     public Object search(String data) {
         Node current = head;
         while (current != null) {
@@ -96,16 +71,13 @@ public class LinkedList {
     } 
     public boolean remove(Object data) {
         if (head == null) return false;
-    
         // If the node to remove is at the head
         if (head.data.equals(data)) {
             head = head.next;
             return true;
         }
-    
         Node current = head;
         Node previous = null;
-    
         while (current != null) {
             if (current.data.equals(data)) {
                 if (previous != null) {
@@ -116,8 +88,6 @@ public class LinkedList {
             previous = current;
             current = current.next;
         }
-    
         return false; // Not found
     }
-       
 }

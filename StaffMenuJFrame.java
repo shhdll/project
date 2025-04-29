@@ -2,8 +2,8 @@ public class StaffMenuJFrame extends javax.swing.JFrame {
 
     public StaffMenuJFrame() {
         initComponents();
-        setSize(400, 200); // Set the window size smaller
-        setLocationRelativeTo(null); // Center the window on screen
+        setSize(400, 200); 
+        setLocationRelativeTo(null); 
     }
 
     @SuppressWarnings("unchecked")

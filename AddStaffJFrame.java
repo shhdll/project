@@ -51,11 +51,11 @@ public class AddStaffJFrame extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(68, 64, 53));
         jButton1.setBackground(new java.awt.Color(82, 80, 67));
         jButton2.setBackground(new java.awt.Color(82, 80, 67));
-        jTextField1.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
-        jTextField2.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
-        jTextField3.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
-        jTextField4.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
-        jTextField5.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
+        jTextField1.setBackground(new java.awt.Color(245, 235, 224)); 
+        jTextField2.setBackground(new java.awt.Color(245, 235, 224)); 
+        jTextField3.setBackground(new java.awt.Color(245, 235, 224)); 
+        jTextField4.setBackground(new java.awt.Color(245, 235, 224)); 
+        jTextField5.setBackground(new java.awt.Color(245, 235, 224)); 
         jPanel1.setBackground(new java.awt.Color(68, 64, 53));
         jLabel1.setForeground(new java.awt.Color(245, 235, 224));
         jLabel2.setForeground(new java.awt.Color(245, 235, 224));
