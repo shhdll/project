@@ -6,6 +6,14 @@ public abstract class Staff {
         this.name = name;
     }
     @Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Staff other = (Staff) obj;
+    return this.name.equalsIgnoreCase(other.name);
+}
+
+    @Override
     public String toString(){
         return "Name: " + getName() +", Hours: " + getHours();
     }

@@ -30,7 +30,7 @@ public class Museum implements Serializable {
     }
     public boolean removeArt(Art a) { // Aggregation
         if (a == null || ArtList.isEmpty()) return false;
-        if (ArtList.removeFromBack(a)) {
+        if (ArtList.remove(a)) {
             if (a instanceof Paintings) numOfPaintings--;
             if (a instanceof Sculptures) numOfSculptures--;
             return true;
@@ -56,7 +56,7 @@ public class Museum implements Serializable {
         if (e == null || StaffList.isEmpty()) return false; // Check if staff object is null or list is empty
 
         // Try to remove the staff member from the list
-        if (StaffList.removeFromBack(e)) {
+        if (StaffList.remove(e)) {
             numOfStaff--; // Decrease the staff count
             return true;
         }

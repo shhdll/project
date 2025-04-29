@@ -93,5 +93,31 @@ public class LinkedList {
             current = current.next;
         }
         return null;
-    }    
+    } 
+    public boolean remove(Object data) {
+        if (head == null) return false;
+    
+        // If the node to remove is at the head
+        if (head.data.equals(data)) {
+            head = head.next;
+            return true;
+        }
+    
+        Node current = head;
+        Node previous = null;
+    
+        while (current != null) {
+            if (current.data.equals(data)) {
+                if (previous != null) {
+                    previous.next = current.next;
+                }
+                return true;
+            }
+            previous = current;
+            current = current.next;
+        }
+    
+        return false; // Not found
+    }
+       
 }
