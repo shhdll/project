@@ -39,7 +39,7 @@ public class JFrameDisplay extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(82, 80, 67));
         jButton1.setBackground(new java.awt.Color(82, 80, 67));
-        jTextArea1.setBackground(new java.awt.Color(245, 235, 224)); // Or any other color that contrasts with black
+        jTextArea1.setBackground(new java.awt.Color(245, 235, 224)); 
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
