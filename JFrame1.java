@@ -10,10 +10,10 @@ import javax.swing.*;
 
 class JFrame1 extends javax.swing.JFrame {
 
-    private Museum museum; 
+    private Museum museum;
 
     public JFrame1(Museum museum) {
-        this.museum = museum; 
+        this.museum = museum;
         initComponents();
     }
 
@@ -44,7 +44,7 @@ class JFrame1 extends javax.swing.JFrame {
         jButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                openManageArtGUI(); 
+                openManageArtGUI();
             }
         });
 
@@ -61,16 +61,14 @@ class JFrame1 extends javax.swing.JFrame {
         jButton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                JFrameDisplay fd = new JFrameDisplay();
-                fd.setVisible(true);
+                jButton3ActionPerformed(evt);
             }
         });
 
         jButton4.setText("Exit");
-        jButton4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                System.exit(0);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt); // ✅ This now calls the correct save+exit logic
             }
         });
 
@@ -114,48 +112,43 @@ class JFrame1 extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         StaffMenuJFrame sf = new StaffMenuJFrame();
         sf.setVisible(true);
-    }    
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-        try {
-                		File f2 = new File("museumOutput.dat");
-                		FileOutputStream ops = new FileOutputStream(f2);
-                		ObjectOutputStream oos = new ObjectOutputStream(ops);                		
-                		oos.writeObject(TestMuseum.m1);               		
-                		oos.close();
-                    	ops.close();                    	
-                	}
-                	catch (IOException e) {
-                		System.out.println("!!");
-                	}
-    }                                        
+    }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         JFrameDisplay fd = new JFrameDisplay();
         fd.setVisible(true);
-    }                                        
-    private void openManageArtGUI() {
-        new ManageArtGUI(museum); 
     }
-    /**
-     * @param args the command line arguments
-     */
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+            File f2 = new File("museumOutput.dat");
+            FileOutputStream ops = new FileOutputStream(f2);
+            ObjectOutputStream oos = new ObjectOutputStream(ops);
+            oos.writeObject(TestMuseum.m1);
+            oos.close();
+            ops.close();
+
+        } catch (IOException e) {
+            System.out.println("Error saving file");
+        }
+        System.exit(0); 
+    }
+
+    private void openManageArtGUI() {
+        new ManageArtGUI(museum);
+    }
+
     public static void main(String args[]) {
-        Museum museum = new Museum("Harmony Museum", 100, 50); 
+        Museum museum = new Museum("Harmony Museum", 100, 50);
         java.awt.EventQueue.invokeLater(() -> new JFrame1(museum).setVisible(true));
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -164,5 +157,5 @@ class JFrame1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    // End of variables declaration                   
+    // End of variables declaration
 }
