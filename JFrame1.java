@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-
 import javax.swing.*;
 
 class JFrame1 extends javax.swing.JFrame {
@@ -127,12 +126,12 @@ class JFrame1 extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         try {
-                		File f2 = new File("museumOutput.dat");
+                	    File f2 = new File("museumOutput.dat");
                 		FileOutputStream ops = new FileOutputStream(f2);
                 		ObjectOutputStream oos = new ObjectOutputStream(ops);                		
                 		oos.writeObject(TestMuseum.m1);               		
                 		oos.close();
-                    	ops.close();                    	
+                    	ops.close();       	             	
                 	}
                 	catch (IOException e) {
                 		System.out.println("!!");
